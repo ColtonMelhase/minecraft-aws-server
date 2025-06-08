@@ -59,6 +59,7 @@ cd minecraft-aws-server
 
 ## Create an SSH Key Pair w/ AWS CLI
 
+This key will be used within the Bash script to SSH into the EC2 instance for setting up the Minecraft server
 ```bash
 aws ec2 create-key-pair `
   --key-name minecraft-key `
@@ -67,6 +68,10 @@ aws ec2 create-key-pair `
 ```
 
 ## Deploy EC2 Infrastructure w/ Terraform
+
+Terraform defines and provisions the AWS resources the Minecraft server will run on. The ```main.tf``` file defines the AWS security group that allows connections into port ```25565``` and allows the instance to download files from the web and accept SSH connections.
+
+It then defines the specifications of the EC2 instance such as the OS and instance type, sets the security group it made just before, and defines the key-pair to the key we made in the previous step.
 
 Run the following commands to initialize Terraform, and build the EC2 instance. Say 'yes' to any prompts.
 
