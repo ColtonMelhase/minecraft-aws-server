@@ -106,6 +106,7 @@ nmap -sV -Pn -p T:25565 35.90.9.182
 ```
 
 If the STATE is **open**, then the server is running!
+* Note it may take a moment for the service is get running.
 
 ## Join The Server via a Minecraft Client
 
